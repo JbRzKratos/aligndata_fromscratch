@@ -18,8 +18,13 @@
     --accent-glow:   rgba(37, 99, 235, 0.08);
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-[var(--bg-base)] text-[var(--text-primary)] font-body antialiased selection:bg-blue-100 selection:text-blue-900;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -63,3 +68,18 @@
     text-wrap: balance;
   }
 }
+
+/* Reduce animations for users who prefer reduced motion & low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .aurora-layer {
+    display: none;
+  }
+}
+

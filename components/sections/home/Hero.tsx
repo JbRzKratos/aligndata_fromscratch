@@ -62,7 +62,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center gap-4 mb-16"
         >
-          <Button href="/quote" variant="primary" size="lg" className="w-full sm:w-auto">
+          <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto">
             Get Started Free →
           </Button>
           <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">

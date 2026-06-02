@@ -70,15 +70,16 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="h-48 md:h-64 w-full rounded-2xl overflow-hidden border border-[var(--border)] relative group">
-              <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#2563EB 1px, transparent 1px)", backgroundSize: "16px 16px" }}></div>
-                <div className="flex flex-col items-center gap-2 relative z-10 text-muted group-hover:text-cyan-DEFAULT transition-colors">
-                  <MapPin className="w-8 h-8" />
-                  <span className="text-sm font-medium">Interactive Map view</span>
-                </div>
-              </div>
+            {/* Google Map */}
+            <div className="h-48 md:h-64 w-full rounded-2xl overflow-hidden border border-[var(--border)] relative">
+              <iframe 
+                src="https://maps.google.com/maps?q=212%20N.%202nd%20St.%20STE%20100,%20Richmond,%20KY%2040475&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                className="absolute inset-0 w-full h-full border-0" 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Aligndata Office Location"
+              ></iframe>
             </div>
           </div>
 

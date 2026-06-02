@@ -10,7 +10,7 @@ export function Footer() {
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-2">
               <span className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-[var(--text-primary)] text-lg leading-none font-display font-bold">A</span>
+                <span className="text-white text-lg leading-none font-display font-bold">A</span>
               </span>
               <span className="text-[var(--text-primary)] font-display font-bold text-2xl">Aligndata</span>
             </Link>
@@ -67,8 +67,8 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               <li><Link href="/about" className="text-muted hover:text-[var(--text-primary)] text-sm transition-colors min-h-[44px] md:min-h-0 flex items-center">About Us</Link></li>
               <li><Link href="/services" className="text-muted hover:text-[var(--text-primary)] text-sm transition-colors min-h-[44px] md:min-h-0 flex items-center">All Services</Link></li>
-              <li><Link href="/why-us" className="text-muted hover:text-[var(--text-primary)] text-sm transition-colors min-h-[44px] md:min-h-0 flex items-center">Why Us</Link></li>
-              <li><Link href="/quote" className="text-muted hover:text-[var(--text-primary)] text-sm transition-colors min-h-[44px] md:min-h-0 flex items-center">Get Quote</Link></li>
+
+
               <li><Link href="/contact" className="text-muted hover:text-[var(--text-primary)] text-sm transition-colors min-h-[44px] md:min-h-0 flex items-center">Contact</Link></li>
             </ul>
           </div>

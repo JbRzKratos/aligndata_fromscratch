@@ -36,7 +36,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { type: "spring", stiffness: 400, damping: 30 }
+      transition: { type: "spring" as const, stiffness: 400, damping: 30 }
     }
   };
 
@@ -146,15 +146,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 </AnimatePresence>
               </motion.div>
 
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="/why-us"
-                  onClick={onClose}
-                  className="text-[18px] text-[var(--text-primary)] py-4 border-b border-[var(--border)] min-h-[44px] flex items-center"
-                >
-                  Why Us
-                </Link>
-              </motion.div>
+
               <motion.div variants={itemVariants}>
                 <Link
                   href="/contact"
@@ -167,7 +159,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </div>
 
             <motion.div variants={itemVariants} className="p-6 border-t border-[var(--border)] mt-auto">
-              <Button href="/quote" className="w-full" onClick={onClose}>
+              <Button href="/contact" className="w-full" onClick={onClose}>
                 Get Quote
               </Button>
             </motion.div>

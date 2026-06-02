@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 export function AuroraBackground({
   children,
@@ -18,9 +17,9 @@ export function AuroraBackground({
       )}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Base Aurora gradient container */}
+        {/* CSS-only Aurora gradient — no JS animation for max perf on low-end devices */}
         <div
-          className="filter blur-[100px] md:blur-[120px] opacity-40 md:opacity-60 absolute -inset-[10px] will-change-transform"
+          className="aurora-layer filter blur-[80px] sm:blur-[100px] opacity-30 sm:opacity-50 absolute -inset-[10px] will-change-auto"
           style={{
             backgroundImage: `
               repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%),
@@ -30,9 +29,8 @@ export function AuroraBackground({
             backgroundPosition: '50% 50%, 50% 50%',
           }}
         >
-          {/* Animated layer to simulate the active aurora motion */}
           <div 
-            className="absolute inset-0 mix-blend-overlay animate-aurora opacity-70"
+            className="absolute inset-0 mix-blend-overlay animate-aurora opacity-60"
             style={{
               backgroundImage: `
                 repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%),
@@ -41,36 +39,10 @@ export function AuroraBackground({
               backgroundSize: '200%, 100%',
             }}
           />
-
-          {/* Custom animated orbs to enhance the depth */}
-          <motion.div
-            animate={{
-              x: [0, 50, 0, -50, 0],
-              y: [0, 50, -50, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-blue-600/30 rounded-full mix-blend-screen"
-          />
-          <motion.div
-            animate={{
-              x: [0, -50, 0, 50, 0],
-              y: [0, -50, 50, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute top-1/3 right-1/4 w-[35vw] h-[35vw] max-w-[500px] max-h-[500px] bg-cyan-500/20 rounded-full mix-blend-screen"
-          />
         </div>
         
         {/* Subtle grid overlay */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none mix-blend-multiply">
+        <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none mix-blend-multiply" aria-hidden="true">
           <pattern id="aurora-grid" width="40" height="40" patternUnits="userSpaceOnUse">
             <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#000" strokeWidth="1" />
           </pattern>
@@ -83,3 +55,4 @@ export function AuroraBackground({
     </div>
   );
 }
+

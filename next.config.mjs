@@ -6,12 +6,13 @@ const nextConfig = {
   // Enable gzip/brotli compression
   compress: true,
 
-  // Optimized image formats
+  // Image optimization — unoptimized for Cloudflare Pages (no server-side processing)
   images: {
     formats: ["image/avif", "image/webp"],
+    unoptimized: true,
   },
 
-  // Security headers
+  // Security headers — served via Cloudflare _headers file for better CDN caching
   async headers() {
     return [
       {
@@ -40,3 +41,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+

@@ -18,13 +18,7 @@ const config: Config = {
           dark: '#0891B2',
           light: '#22D3EE'
         },
-        navy: {
-          900: '#040D1A',
-          800: '#071428',
-          700: '#0B1A35',
-          600: '#0F2347',
-          500: '#152D5A'
-        },
+
         slate: {
           400: '#94A3B8',
           300: '#CBD5E1',
@@ -36,15 +30,14 @@ const config: Config = {
       fontFamily: {
         display: ['Sora', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-hero': 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 70%)',
       },
       animation: {
-        'marquee': 'marquee 30s linear infinite',
         aurora: "aurora 60s linear infinite",
+        marquee: "marquee 30s linear infinite",
       },
       keyframes: {
         aurora: {
@@ -54,7 +47,7 @@ const config: Config = {
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
-        }
+        },
       }
     },
   },

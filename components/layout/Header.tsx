@@ -64,16 +64,14 @@ export function Header() {
             <NavDropdown isOpen={servicesDropdownOpen} />
           </div>
 
-          <Link href="/why-us" className="text-[14px] text-muted hover:text-[var(--text-primary)] transition-colors duration-150 font-body">
-            Why Us
-          </Link>
+
           <Link href="/contact" className="text-[14px] text-muted hover:text-[var(--text-primary)] transition-colors duration-150 font-body">
             Contact
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button href="/quote" variant="primary" size="sm">
+          <Button href="/contact" variant="primary" size="sm">
             Get Quote
           </Button>
         </div>

@@ -25,7 +25,7 @@ export function HomeCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-12 w-full sm:w-auto">
-          <Button href="/quote" variant="primary" size="lg" className="w-full sm:w-auto">
+          <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto">
             Get Free Quote →
           </Button>
           <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">
