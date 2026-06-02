@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
-import { 
-  HelpCircle, 
-  Target, 
-  List, 
-  ShieldCheck, 
-  Rocket, 
-  Briefcase, 
-  Clock, 
-  Star, 
-  Map, 
-  Users, 
-  Database, 
-  Cpu, 
+import {
+  HelpCircle,
+  Target,
+  List,
+  ShieldCheck,
+  Rocket,
+  Briefcase,
+  Clock,
+  Star,
+  Map,
+  Users,
+  Database,
+  Cpu,
   Zap,
   CheckCircle2,
   Tag
@@ -33,7 +33,7 @@ export function Badge({ label, variant = "default", className, icon }: BadgeProp
 
   // Auto-resolve icon based on label if not provided
   let IconToRender = icon;
-  
+
   if (!IconToRender) {
     const l = label.toLowerCase();
     if (l.includes("faq")) IconToRender = <HelpCircle className="w-3.5 h-3.5" />;
