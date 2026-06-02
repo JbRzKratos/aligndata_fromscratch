@@ -44,8 +44,13 @@ const config: Config = {
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',
+        aurora: "aurora 60s linear infinite",
       },
       keyframes: {
+        aurora: {
+          from: { backgroundPosition: "50% 50%, 50% 50%" },
+          to: { backgroundPosition: "350% 50%, 350% 50%" },
+        },
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },

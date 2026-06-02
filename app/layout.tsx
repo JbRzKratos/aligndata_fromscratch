@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Sora, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Sora, DM_Sans } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const sora = Sora({
@@ -14,13 +16,8 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aliigndata.com"),
   title: "B2B Email List | 75M+ Verified Business Contacts | Aligndata",
   description: "Access 75M+ verified B2B contacts with 95% accuracy. Generate qualified leads, power marketing campaigns with GDPR compliant business email lists.",
   keywords: "b2b email list, verified business contacts, lead generation, business contact database, email list for marketing, b2b leads, decision maker contacts, GDPR compliant data",
@@ -41,6 +38,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,11 +48,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${sora.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${sora.variable} ${dmSans.variable} antialiased min-h-screen flex flex-col`}
       >
-        {/* Header will go here */}
-        {children}
-        {/* Footer will go here */}
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

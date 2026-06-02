@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    --bg-base:       #040D1A;
-    --bg-surface:    #071428;
-    --bg-card:       #0B1A35;
-    --bg-card-hover: #0F2347;
-    --border:        rgba(255, 255, 255, 0.08);
-    --border-hover:  rgba(37, 99, 235, 0.5);
-    --text-primary:  #FFFFFF;
-    --text-muted:    #94A3B8;
-    --text-dim:      #64748B;
+    --bg-base:       #FFFFFF;       /* Pure white base */
+    --bg-surface:    #F8FAFC;       /* Slate 50 for sections */
+    --bg-card:       #FFFFFF;       /* White cards */
+    --bg-card-hover: #F1F5F9;       /* Slate 100 on hover */
+    --border:        rgba(0, 0, 0, 0.08);
+    --border-hover:  rgba(37, 99, 235, 0.3);
+    --text-primary:  #0F172A;       /* Slate 900 for high contrast */
+    --text-muted:    #475569;       /* Slate 600 for paragraphs */
+    --text-dim:      #94A3B8;       /* Slate 400 for de-emphasized */
     --accent-blue:   #2563EB;
     --accent-cyan:   #06B6D4;
-    --accent-glow:   rgba(37, 99, 235, 0.15);
+    --accent-glow:   rgba(37, 99, 235, 0.08);
   }
 
   body {
-    @apply bg-[var(--bg-base)] text-[var(--text-primary)] font-body antialiased;
+    @apply bg-[var(--bg-base)] text-[var(--text-primary)] font-body antialiased selection:bg-blue-100 selection:text-blue-900;
   }
 
   h1, h2, h3, h4, h5, h6 {
