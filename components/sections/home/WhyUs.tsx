@@ -44,7 +44,7 @@ export function WhyUs() {
   ];
 
   return (
-    <SectionWrapper variant="surface">
+    <SectionWrapper variant="surface" lazy>
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
         <Badge label="Why Us" className="mb-6" />
         <h2 className="mb-4">The Aligndata advantage</h2>

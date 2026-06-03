@@ -39,7 +39,7 @@ export function HomeFAQ() {
   ];
 
   return (
-    <SectionWrapper variant="base">
+    <SectionWrapper variant="base" lazy>
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
         <Badge label="FAQ" className="mb-6" />
         <h2 className="mb-4">Frequently asked questions</h2>

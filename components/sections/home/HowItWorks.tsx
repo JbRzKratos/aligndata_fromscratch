@@ -43,7 +43,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <SectionWrapper variant="surface" className="relative">
+    <SectionWrapper variant="surface" className="relative" lazy>
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
         <Badge label="Our Process" className="mb-6" />
         <h2 className="mb-4">From request to results in 48 hours</h2>

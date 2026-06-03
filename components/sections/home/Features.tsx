@@ -44,7 +44,7 @@ export function Features() {
   ];
 
   return (
-    <SectionWrapper variant="base" className="relative">
+    <SectionWrapper variant="base" className="relative" lazy>
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
         <Badge label="Platform Features" className="mb-6" />
         <h2 className="mb-4">Everything you need to scale your outreach</h2>

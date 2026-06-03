@@ -6,6 +6,8 @@ interface SectionWrapperProps {
   className?: string;
   children: ReactNode;
   variant?: "base" | "surface";
+  /** Enable content-visibility: auto to skip rendering when off-screen */
+  lazy?: boolean;
 }
 
 export function SectionWrapper({
@@ -13,6 +15,7 @@ export function SectionWrapper({
   className,
   children,
   variant = "base",
+  lazy = false,
 }: SectionWrapperProps) {
   return (
     <section
@@ -20,6 +23,7 @@ export function SectionWrapper({
       className={cn(
         "py-12 md:py-16 lg:py-24",
         variant === "surface" ? "bg-[var(--bg-surface)]" : "bg-[var(--bg-base)]",
+        lazy && "cv-auto",
         className
       )}
     >
@@ -29,3 +33,4 @@ export function SectionWrapper({
     </section>
   );
 }
+

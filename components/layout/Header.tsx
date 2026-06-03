@@ -1,27 +1,48 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { NavDropdown } from "./NavDropdown";
-import { MobileNav } from "./MobileNav";
+import dynamic from "next/dynamic";
+
+const NavDropdown = dynamic(() => import("./NavDropdown").then(mod => mod.NavDropdown), {
+  ssr: false,
+});
+const MobileNav = dynamic(() => import("./MobileNav").then(mod => mod.MobileNav), {
+  ssr: false,
+});
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close mobile nav on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -78,15 +99,16 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[var(--text-primary)] p-2"
+          className="md:hidden text-[var(--text-primary)] p-2 relative z-50"
           onClick={() => setMobileMenuOpen(true)}
           aria-label="Open menu"
         >
           <Menu className="w-6 h-6" />
         </button>
       </div>
-
-      <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>
+
+    <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+    </>
   );
 }
